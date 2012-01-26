@@ -14,7 +14,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Event;
 import org.bukkit.event.Event.Type;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -100,8 +99,6 @@ public class HawkEye extends JavaPlugin {
 			pm.disablePlugin(this);
 			return;
 		}
-
-		checkDependencies(pm);
 
 		containerManager = new ContainerAccessManager();
 
@@ -202,23 +199,6 @@ public class HawkEye extends JavaPlugin {
 			if (Config.Debug)
 				e.printStackTrace();
 		}
-	}
-
-	/**
-	 * Checks if required plugins are loaded
-	 * 
-	 * @param pm
-	 *            PluginManager
-	 */
-	private void checkDependencies(PluginManager pm) {
-
-		// Check if WorldEdit is loaded
-		Plugin we = pm.getPlugin("WorldEdit");
-		if (we != null) {
-			Util.info("WorldEdit found, selection rollbacks enabled");
-		} else
-			Util.info("WARNING! WorldEdit not found, WorldEdit selection rollbacks disabled until WorldEdit is available");
-
 	}
 
 	/**

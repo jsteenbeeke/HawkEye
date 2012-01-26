@@ -48,6 +48,7 @@ general:
     default-here-radius: 5
     default-tool-command: ''
     check-for-updates: true
+    give-user-tool: false
 mysql:
     hawkeye-table: hawkeye
     port: 3306
@@ -59,8 +60,6 @@ mysql:
     password: ''
     database: minecraft
 ignore-worlds:
-- thisworldisignored
-- soisthisone
 version: 1.0.5b
 command-filter:
 - /login
